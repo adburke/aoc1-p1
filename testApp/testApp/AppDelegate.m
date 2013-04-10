@@ -22,6 +22,54 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    // Obstacle course
+    int length = 100;
+    
+    //attempts var
+    int attempts = 0;
+    
+    // Run the course
+    while (length > 0) {
+        // random number generated for true false outcome binding
+        int random = arc4random_uniform(2);
+        // random attempt bool value
+        bool attemptResult = random ? true : false;
+        
+        if (attempts > 0) {
+            NSLog(@"Attempting obstacle at marker %d again!", length);
+        } else {
+            NSLog(@"Marker=%d", length);
+        }
+        // obstacle locations
+        if (length == 90 || length == 50 || length == 40 || length == 20) {
+            if (attemptResult) {
+                NSLog(@"You completed the obstacle at marker %d!", length);
+                attempts = 0;
+                length--;
+            } else {
+                attempts++;
+                NSLog(@"You failed the obstacle try again! This is your %d attempt.", attempts);
+            }
+        } else {
+            length--;
+        }
+            
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return YES;
 }
 
