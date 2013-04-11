@@ -23,27 +23,35 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    // float to int
+    float courseVersion = 2.0;
+    NSLog(@"Course version float =%f", courseVersion);
+    float courseVersion = (int)courseVersion;
+    NSLog(@"Course version int =%d", courseVersion)
     
     // Obstacle course
     int length = 100;
+    
+    // team size
+    int team = 5;
     
     //attempts var
     int attempts = 0;
     
     // Run the course
     while (length > 0) {
-        // random number generated for true false outcome binding
-        int random = arc4random_uniform(2);
-        // random attempt bool value
-        bool attemptResult = random ? true : false;
-        
         if (attempts > 0) {
             NSLog(@"Attempting obstacle at marker %d again!", length);
         } else {
             NSLog(@"Marker=%d", length);
         }
-        // obstacle locations
+        // individual obstacle locations
         if (length == 90 || length == 50 || length == 40 || length == 20) {
+            // random number generated for true false outcome binding
+            int random = arc4random_uniform(2);
+            // random attempt bool value
+            BOOL attemptResult = random ? TRUE : FALSE;
+            // check obstacle attempts increment if failed 
             if (attemptResult) {
                 NSLog(@"You completed the obstacle at marker %d!", length);
                 attempts = 0;
@@ -52,11 +60,17 @@
                 attempts++;
                 NSLog(@"You failed the obstacle try again! This is your %d attempt.", attempts);
             }
+        } else if ((length == 70 || length == 30 || length == 10) && team > 1) {
+            NSLog(@"This is a group obstacle gather your team!");
+            for (int i = 1; i <= team; i++) {
+                NSLog(@"Team member #%d completed the obstacle.", i);
+            }
+            length--;
         } else {
+            NSLog(@"Keep moving!");
+            attempts = 0;
             length--;
         }
-            
-        
         
     }
     
