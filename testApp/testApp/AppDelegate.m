@@ -25,9 +25,9 @@
     
     // float to int
     float courseVersionFloat = 2.0f;
-    NSLog(@"Course version float = %.1f", courseVersionFloat);
+    NSLog(@"Course version %.1f", courseVersionFloat);
     int courseVersionInt = (int)courseVersionFloat;
-    NSLog(@"Course version int = %d", courseVersionInt);
+    NSLog(@"Course version %d", courseVersionInt);
     
     // Obstacle course vars
     int length = 100;
