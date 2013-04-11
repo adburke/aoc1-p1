@@ -51,7 +51,7 @@
     
     // Run the course
     // while condition && w/ float, int, and BOOL
-    while (length > 0 && courseVersionFloat == 2.0 && ready) {
+    while (length >= 0 && courseVersionFloat == 2.0 && ready) {
         if (attempts > 0) {
             NSLog(@"Attempting obstacle at marker %d again!", length);
         } else {
@@ -78,6 +78,10 @@
             for (int i = 1; i <= team; i++) {
                 NSLog(@"Team member #%d completed the obstacle.", i);
             }
+            NSLog(@"The team has finished the obstacle.");
+            length--;
+        } else if (length == 0) {
+            NSLog(@"Course completed!");
             length--;
         } else {
             NSLog(@"Keep moving!");
