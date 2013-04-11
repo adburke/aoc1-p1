@@ -24,10 +24,10 @@
     [self.window makeKeyAndVisible];
     
     // float to int
-    float courseVersion = 2.0;
-    NSLog(@"Course version float =%f", courseVersion);
-    float courseVersion = (int)courseVersion;
-    NSLog(@"Course version int =%d", courseVersion)
+    float courseVersionFloat = 2.0;
+    NSLog(@"Course version float = %f", courseVersionFloat);
+    int courseVersionInt = (int)courseVersionFloat;
+    NSLog(@"Course version int = %d", courseVersionInt);
     
     // Obstacle course
     int length = 100;
@@ -43,7 +43,7 @@
         if (attempts > 0) {
             NSLog(@"Attempting obstacle at marker %d again!", length);
         } else {
-            NSLog(@"Marker=%d", length);
+            NSLog(@"Marker = %d", length);
         }
         // individual obstacle locations
         if (length == 90 || length == 50 || length == 40 || length == 20) {
