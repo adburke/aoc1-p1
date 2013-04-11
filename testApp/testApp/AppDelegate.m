@@ -59,11 +59,11 @@
         }
         // individual obstacle locations
         if (length == 90 || length == 50 || length == 40 || length == 20) {
-            // random number generated for true false outcome binding
+            // random number generated for true/false outcome binding
             int random = arc4random_uniform(2);
             // random attempt bool value
             BOOL attemptResult = random ? TRUE : FALSE;
-            // check obstacle attempts increment if failed 
+            // check obstacle attempts - increment if failed 
             if (attemptResult) {
                 NSLog(@"You completed the obstacle at marker %d!", length);
                 attempts = 0;
@@ -72,7 +72,7 @@
                 attempts++;
                 NSLog(@"You failed the obstacle try again! This is your %d attempt.", attempts);
             }
-        } else if ((length == 70 || length == 30 || length == 10) && team > 1) {
+        } else if ((length == 70 || length == 30 || length == 10) && team > 1) { // Team obstacles
             NSLog(@"This is a group obstacle gather your team!");
             // nested for loop 
             for (int i = 1; i <= team; i++) {
