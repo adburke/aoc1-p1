@@ -24,20 +24,30 @@
     [self.window makeKeyAndVisible];
     
     // float to int
-    float courseVersionFloat = 2.0;
-    NSLog(@"Course version float = %f", courseVersionFloat);
+    float courseVersionFloat = 2.0f;
+    NSLog(@"Course version float = %.1f", courseVersionFloat);
     int courseVersionInt = (int)courseVersionFloat;
     NSLog(@"Course version int = %d", courseVersionInt);
     
-    // Obstacle course
+    // Obstacle course vars
     int length = 100;
     BOOL ready = TRUE;
     
     // team size
     int team = 5;
     
-    //attempts var
+    // attempts var
     int attempts = 0;
+    
+    // Warmup loop - stand alone for loop
+    int warmupTime = 10;
+    for (int i = 0; i <= warmupTime; i++) {
+        if (warmupTime - i > 0) {
+            NSLog(@"The warmup has %d minutes left.", warmupTime - i);
+        } else {
+            NSLog(@"The warmup is over!");
+        }
+    }
     
     // Run the course
     // while condition && w/ float, int, and BOOL
@@ -64,6 +74,7 @@
             }
         } else if ((length == 70 || length == 30 || length == 10) && team > 1) {
             NSLog(@"This is a group obstacle gather your team!");
+            // nested for loop 
             for (int i = 1; i <= team; i++) {
                 NSLog(@"Team member #%d completed the obstacle.", i);
             }
