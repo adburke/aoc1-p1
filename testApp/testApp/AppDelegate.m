@@ -31,6 +31,7 @@
     
     // Obstacle course
     int length = 100;
+    BOOL ready = TRUE;
     
     // team size
     int team = 5;
@@ -39,7 +40,8 @@
     int attempts = 0;
     
     // Run the course
-    while (length > 0) {
+    // while condition && w/ float, int, and BOOL
+    while (length > 0 && courseVersionFloat == 2.0 && ready) {
         if (attempts > 0) {
             NSLog(@"Attempting obstacle at marker %d again!", length);
         } else {
